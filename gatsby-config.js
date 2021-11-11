@@ -1,9 +1,37 @@
+// gatsby-config.js file
+
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
+  flags: {
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true,
+    DEV_SSR: true,
+    FAST_DEV: true,
+  },
   siteMetadata: {
-    title: 'Gatsby + Prismic Tutorial',
-    description: 'Learn how to integrate Prismic into your Gatsby project.',
+    title: `nft.exponential`,
+    description: `View your next investment`,
+    author: `@nft.exponential`,
+    siteUrl: `https://www.nft.exponential.com`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: process.env.PRISMIC_API_REPOSITORY_NAME,
+        accessToken: process.env.PRISMIC_API_ACCESS_TOKEN,
+        customTypesApiToken: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN,
+        linkResolver: require('./src/utils/link-resolver').linkResolver,
+        schemas: {
+          homepage: require('./custom_types/homepage.json'),
+          navigation: require('./custom_types/navigation.json'),
+          page: require('./custom_types/page.json'),
+        },
+      },
+    },
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     {
@@ -19,11 +47,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-google-fonts',
-      options: {
-        fonts: [`Lato\:400,400,700,700i,900`, `Amiri\:400,400,700,700i`],
-      },
-    },
+    'gatsby-plugin-gatsby-cloud',
+    'gatsby-plugin-sass',
   ],
 }
