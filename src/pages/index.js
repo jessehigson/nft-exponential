@@ -1,5 +1,3 @@
-// index.js file
-
 import * as React from "react"
 import { graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
@@ -15,7 +13,13 @@ const HomeTemplate = ({ data }) => {
   return (
     <Layout isHomepage>
       <Seo title="Home" />
-      <MainContent title={RichText.asText(doc.title.raw)} />
+      <MainContent
+        title={RichText.asText(doc.title.raw)}
+        instagramLinkUrl={doc.instagram_link.url}
+        instagramLinkTarget={doc.instagram_link.target}
+        twitterLinkUrl={doc.twitter_link.url}
+        twitterLinkTarget={doc.twitter_link.target}
+      />
     </Layout>
   )
 }
@@ -34,14 +38,17 @@ export const query = graphql`
             }
           }
         }
-        instagram_link {
-          id
-        }
         twitter_link {
-          id
+          url
+          target
         }
         carousel_link {
-          id
+          url
+          target
+        }
+        instagram_link {
+          url
+          target
         }
       }
     }

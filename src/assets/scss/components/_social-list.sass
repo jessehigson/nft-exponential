@@ -1,0 +1,15 @@
+.social-list
+  display: flex
+  list-style: none
+
+  &__item
+    &:not(:last-child)
+      margin-right: 1em
+
+    svg
+      height: 1.5em
+      width: auto
+
+  &__link
+    +opacityHover
+    text-decoration: none

@@ -12,9 +12,6 @@
     @extend %h5
     margin: 0
 
-    a
+    &-link
+      +opacityHover
       text-decoration: none
-      transition: opacity $transitionDuration $transitionTimingFunction
-
-      &:hover
-        opacity: $opacityHover

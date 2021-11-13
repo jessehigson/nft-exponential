@@ -6,6 +6,7 @@ export const Footer = () => (
       <span className="footer__attribution">
         Website built by{" "}
         <a
+          className="footer__attribution-link"
           href="https://www.jessehigson.com"
           rel="nofollow noopener noreferrer"
           target="_blank"
