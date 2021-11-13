@@ -3,7 +3,7 @@
     "title": {
       "type": "StructuredText",
       "config": {
-        "single": "heading1",
+        "single": "heading2",
         "label": "title",
         "placeholder": "Notice The Pattern | Resell Art"
       }
@@ -29,7 +29,8 @@
       "config": {
         "allowTargetBlank": true,
         "label": "Carousel Link",
-        "placeholder": "https://opensea.io/collection/collection-exponential"
+        "placeholder": "https://opensea.io/collection/collection-exponential",
+        "select": null
       }
     },
     "instagram_link": {
@@ -37,7 +38,8 @@
       "config": {
         "allowTargetBlank": true,
         "label": "Instagram Link",
-        "placeholder": "https://www.instagram.com/nft.exponential/"
+        "placeholder": "https://www.instagram.com/nft.exponential/",
+        "select": null
       }
     },
     "twitter_link": {
@@ -45,7 +47,8 @@
       "config": {
         "allowTargetBlank": true,
         "label": "Twitter Link",
-        "placeholder": "https://twitter.com/nft_exponential"
+        "placeholder": "https://twitter.com/nft_exponential",
+        "select": null
       }
     }
   }
