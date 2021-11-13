@@ -19,6 +19,8 @@ const HomeTemplate = ({ data }) => {
         instagramLinkTarget={doc.instagram_link.target}
         twitterLinkUrl={doc.twitter_link.url}
         twitterLinkTarget={doc.twitter_link.target}
+        carouselLinkUrl={doc.carousel_link.url}
+        carouselLinkTarget={doc.carousel_link.target}
       />
     </Layout>
   )

@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Carousel } from "./Carousel"
 import { SocialList } from "./SocialList"
 
 export const MainContent = ({
@@ -7,12 +8,17 @@ export const MainContent = ({
   instagramLinkTarget,
   twitterLinkUrl,
   twitterLinkTarget,
+  carouselLinkUrl,
+  carouselLinkTarget,
 }) => (
   <section className="main-content">
     <div className="main-content__container container container--flex">
-      <h2 className="main-content__title">{title}</h2>
+      {title && <h2 className="main-content__title">{title}</h2>}
 
-      <div>Slider</div>
+      <Carousel
+        carouselLinkUrl={carouselLinkUrl}
+        carouselLinkTarget={carouselLinkTarget}
+      />
 
       <SocialList
         instagramLinkUrl={instagramLinkUrl}
