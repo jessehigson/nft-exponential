@@ -1,32 +1,27 @@
 {
   "Main": {
-    "document_display_name": {
+    "title": {
       "type": "StructuredText",
       "config": {
         "single": "heading1",
-        "label": "Document display name"
+        "label": "title",
+        "placeholder": "Notice The Pattern | Resell Art"
       }
     },
-    "top_navigation": {
+    "images": {
       "type": "Group",
       "config": {
         "fields": {
-          "link": {
-            "type": "Link",
+          "image": {
+            "type": "Image",
             "config": {
-              "select": "document",
-              "label": "link"
-            }
-          },
-          "link_label": {
-            "type": "StructuredText",
-            "config": {
-              "single": "paragraph",
-              "label": "link_label"
+              "constraint": {},
+              "thumbnails": [],
+              "label": "image"
             }
           }
         },
-        "label": "top_navigation"
+        "label": "images"
       }
     }
   }

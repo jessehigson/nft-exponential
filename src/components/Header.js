@@ -1,26 +1,11 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
+import * as React from "react"
 
-export const Header = ({ isHomepage }) => {
-  const homepageClass = isHomepage ? 'homepage-header' : ''
+export const Header = () => {
   return (
-    <header className={`site-header ${homepageClass}`}>
-      <Link to="/">
-        <div className="logo">Example Site</div>
-      </Link>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/more-info">More Info</Link>
-          </li>
-        </ul>
-      </nav>
+    <header className="header">
+      <div className="header__container container container--flex">
+        <h1 className="header__title">nft.exponential</h1>
+      </div>
     </header>
   )
 }
