@@ -13,7 +13,7 @@ export const MainContent = ({
   carouselImages,
 }) => (
   <section className="main-content">
-    <div className="main-content__container container container--flex">
+    <div className="main-content__container container container--flex container--content">
       {title && <h2 className="main-content__title">{title}</h2>}
 
       <ImageGallery
