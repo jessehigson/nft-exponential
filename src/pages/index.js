@@ -21,6 +21,7 @@ const HomeTemplate = ({ data }) => {
         twitterLinkTarget={doc.twitter_link.target}
         carouselLinkUrl={doc.carousel_link.url}
         carouselLinkTarget={doc.carousel_link.target}
+        carouselImages={doc.carousel_images}
       />
     </Layout>
   )
@@ -35,8 +36,14 @@ export const query = graphql`
         }
         carousel_images {
           carousel_image {
+            fluid {
+              base64
+              src
+            }
             localFile {
-              id
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED)
+              }
             }
           }
         }
